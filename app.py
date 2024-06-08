@@ -25,21 +25,9 @@ with app.app_context():
     db.create_all()
     
     
-
-# @app.route("/")
-# def index():
-#     return render_template("index.html")
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
     
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    # data = {
-    #     'id': Todo.id,
-    #     'content': Todo.content,
-    #     'date_created': Todo.date_created
-    # }
     if request.method == 'POST':
         task_content = request.form['content']
         new_task = Todo(content=task_content)
