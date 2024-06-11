@@ -46,7 +46,8 @@ def index():
             tasklist.append(item.to_dict())
             render_template('index.html', tasks=tasks)
         return jsonify(tasklist)
-
+        # return render_template('index.html', tasks=tasks)   # return this line of code instead of "return jsonify(tasklist)" when you want to add
+                                                              # tasks to the database.
 
 @app.route('/delete/<int:id>')
 def delete(id):
